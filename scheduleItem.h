@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class scheduleItem {
 private:
@@ -51,8 +52,23 @@ public:
 
     // Print function
     void print() const {
+        std::cout << std::left
+            << std::setw(10) << subject
+            << std::setw(10) << catalog
+            << std::setw(10) << section
+            << std::setw(10) << component
+            << std::setw(10) << session
+            << std::setw(10) << units
+            << std::setw(10) << totEnrl
+            << std::setw(10) << capEnrl
+            << std::setw(10) << instructor << std::endl;
+
+
+
+        /*
         std::cout << subject << "  " << catalog << "  " << section << "  "
             << component << "  " << session << "  " << units << "  "
             << totEnrl << "  " << capEnrl << "  " << instructor << "\n";
+            */
     }
 };
