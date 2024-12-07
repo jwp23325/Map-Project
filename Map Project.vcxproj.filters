@@ -28,6 +28,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Downloads\STEM - Summer 2022 Schedule of Classes as of 05-02-22.csv" />
+    <None Include="..\..\..\Downloads\STEM - Summer 2022 Schedule of Classes as of 05-02-22.csv">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
