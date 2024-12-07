@@ -1,3 +1,5 @@
+// This code was generated using ChatGPT and modified by the coder
+
 #pragma once
 #include <string>
 #include <iostream>
@@ -62,13 +64,5 @@ public:
             << std::setw(10) << totEnrl
             << std::setw(10) << capEnrl
             << std::setw(10) << instructor << std::endl;
-
-
-
-        /*
-        std::cout << subject << "  " << catalog << "  " << section << "  "
-            << component << "  " << session << "  " << units << "  "
-            << totEnrl << "  " << capEnrl << "  " << instructor << "\n";
-            */
     }
 };

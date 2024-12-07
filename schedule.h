@@ -1,3 +1,5 @@
+// This code was generated using ChatGPT and modified by the coder
+
 #pragma once
 #include <map>
 #include <string>
@@ -20,7 +22,7 @@ public:
 
         while (std::getline(file, line)) {
             std::stringstream ss(line);
-            std::string subject, catalog, section, component, session, instructor;
+            std::string subject, catalog, section, component, session, instructor,field;
             int units, totEnrl, capEnrl;
 
             // Read fields from the line
@@ -29,12 +31,19 @@ public:
             std::getline(ss, section, ',');
             std::getline(ss, component, ',');
             std::getline(ss, session, ',');
+
+            std::getline(ss, field, ','); // Skips MinUnits
+
             ss >> units;
             ss.ignore(1, ','); // Skip comma
             ss >> totEnrl;
             ss.ignore(1, ','); // Skip comma
             ss >> capEnrl;
             ss.ignore(1, ','); // Skip comma
+
+            std::getline(ss, field, ','); // Skips AcadOrg
+            ss.ignore(1, '"');                  // Skeps quotation
+
             std::getline(ss, instructor, ',');
 
             // Create and add a scheduleItem
@@ -50,7 +59,18 @@ public:
 
     // Print all entries
     void print() const {
-        std::cout << "Subject  Catalog  Section  Component  Session  Units  TotEnrl  CapEnrl  Instructor\n";
+        std::cout << std::left
+            << std::setw(10) << "Subject"
+            << std::setw(10) << "Catalog"
+            << std::setw(10) << "Section"
+            << std::setw(10) << "Component"
+            << std::setw(10) << "Session"
+            << std::setw(10) << "Units"
+            << std::setw(10) << "TotEnrol"
+            << std::setw(10) << "CapEnrol"
+            << std::setw(10) << "Instructor" << std::endl;
+
+        
         for (const auto& [key, item] : scheduleMap) {
             item.print();
         }

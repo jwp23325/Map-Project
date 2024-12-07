@@ -1,3 +1,5 @@
+// This code was generated using ChatGPT and modified by the coder
+
 #include <iostream>
 #include <fstream>
 #include "schedule.h"
